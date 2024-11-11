@@ -9,9 +9,7 @@ from dotenv import find_dotenv, load_dotenv
 
 load_dotenv(find_dotenv())
 
-dev_passphrase = os.environ.get(
-    "DEV_PASSPHRASE"
-)  ## Make sure to edit your .env file with your passphrase
+dev_passphrase = "jabuk123"  ## Make sure to edit your .env file with your passphrase
 network = "ethereum:mainnet-fork:foundry"  ## We ask the Ape Framework to locate our forked mainnet
 
 if __name__ == "__main__":
@@ -29,13 +27,13 @@ if __name__ == "__main__":
     weETH_decimals = weETH.decimals()
     eETH_LP = Contract(ADDRESSES["eETH_LP"])
 
-    dev = accounts.load("pendle-agent")  ## Change this to your account name
+    dev = accounts.load("505sol")  ## Change this to your account name
     dev.set_autosign(True, passphrase=dev_passphrase)
     dev.balance += 20 * int(1e18)  # Add 20 ETH to the account
 
     eETH_mint_amount = 8 * (10**eETH_decimals)  ## Mint 8 eETH
 
-    with accounts.use_sender("pendle-agent"):
+    with accounts.use_sender("505sol"):
         logger.warning(
             f"Staking Ether to get  {eETH_mint_amount/10**eETH_decimals} eETH"
         )

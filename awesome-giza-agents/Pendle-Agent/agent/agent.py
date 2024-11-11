@@ -64,7 +64,7 @@ def SY_PY_swap(
     agent_id: int,
     fixed_yield: float,
     expiration_days: int,
-    account="pendle-agent",
+    account="505sol",
     chain="ethereum:mainnet-fork:foundry",
 ):
     ## Change the PENDLE-AGENT_PASSPHRASE to be {AGENT-NAME}_PASSPHRASE
