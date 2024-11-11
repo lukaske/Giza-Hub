@@ -29,14 +29,13 @@ async def main(client):
         id=930,
         version=1
     )
+
+    # endpoint fails here...
     (result, request_id) = model.predict(
-        input_feed={"input" : np.linspace(0,1,7)}, verifiable=True, dry_run=True
+        input_feed={"input" : X}, verifiable=True, dry_run=True
     )
 
-        
-    # X is the data input you need to define
-    prediction = agent.predict(input_feed={"input": X}, verifiable=True, dry_run=True)
-
+    
 
 
     contract = Contract.from_address(provider=account, address=address)
@@ -53,7 +52,7 @@ if __name__ == "__main__":
     load_dotenv(find_dotenv())
     # First, make sure to generate private key and salt
     address = "0x025e0b4016442e75a1b5809c43d441920cde24c7b7b43a9015b4d83bb61c8796"
-    private_key = os.environ.get("CLASS_HASH")
+    private_key = os.environ.get("PRIVATE_KEY")
     class_hash = os.environ.get("CLASS_HASH")
     salt = 1234567890
 
