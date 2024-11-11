@@ -7,12 +7,8 @@ from starknet_py.net.signer.stark_curve_signer import KeyPair
 from starknet_py.net.full_node_client import FullNodeClient
 from dotenv import find_dotenv, load_dotenv
 from giza.agents.model import GizaModel
+from giza.agents import GizaAgent
 from starknet_py.contract import Contract
-
-
-
-
-
 
 async def main(client):
     # X is the data input you need to define
@@ -29,15 +25,18 @@ async def main(client):
             chain=StarknetChainId.SEPOLIA,
         )
 
-    # we create an instance of our Agent given the id
     model = GizaModel(
-            id=930,
-            version=1,
-        )
-        
-    (result, request_id) = model.predict(
-        input_feed={"input" :X}, verifiable=True, dry_run=True
+        id=930,
+        version=1
     )
+    (result, request_id) = model.predict(
+        input_feed={"input" : np.linspace(0,1,7)}, verifiable=True, dry_run=True
+    )
+
+        
+    # X is the data input you need to define
+    prediction = agent.predict(input_feed={"input": X}, verifiable=True, dry_run=True)
+
 
 
     contract = Contract.from_address(provider=account, address=address)
