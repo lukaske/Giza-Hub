@@ -1,5 +1,7 @@
 # Volatility-Based Position Management on StarkNet
 
+[Video link](https://www.loom.com/share/ba9b606fbb4e4119bb1daf66e8d8c532?sid=6311239f-356c-4f10-ac94-4061e44b364c)
+
 ## Project Overview
 This project is an automated trading system built on StarkNet that predicts market volatility and decides whether to open or close LP positions for risk management. Using machine learning models integrated with blockchain smart contracts, the system ensures efficient position management based on data-driven predictions. The volatility metric used is calculated based on a 7-day rolling realized volatility.
 
