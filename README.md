@@ -1,7 +1,7 @@
 # Volatility-Based Position Management on StarkNet
 
 ## Project Overview
-This project is an automated trading system built on StarkNet that predicts market volatility and decides whether to open or close trading positions. Using machine learning models integrated with blockchain smart contracts, the system ensures efficient position management based on data-driven predictions.
+This project is an automated trading system built on StarkNet that predicts market volatility and decides whether to open or close LP positions for risk-management. Using machine learning models integrated with blockchain smart contracts, the system ensures efficient position management based on data-driven predictions.
 
 ## Features
 - **Volatility Prediction**: Utilizes the Giza ML model to predict market volatility from input data.
